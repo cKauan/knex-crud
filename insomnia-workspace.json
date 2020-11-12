@@ -1,0 +1,217 @@
+{
+    "_type": "export",
+    "__export_format": 4,
+    "__export_date": "2020-11-12T23:23:49.957Z",
+    "__export_source": "insomnia.desktop.app:v2020.4.2",
+    "resources": [
+        {
+            "_id": "req_86483eaa812047ef88ec347d50904940",
+            "parentId": "fld_4232e3f28513406b803987fc35895f40",
+            "modified": 1605222380533,
+            "created": 1605195520408,
+            "url": "{{ baseUrl }}/users",
+            "name": "list users",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {},
+            "metaSortKey": -1605195577170,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_4232e3f28513406b803987fc35895f40",
+            "parentId": "wrk_1995d70316b84a0da27fde2cf7a983be",
+            "modified": 1605195514138,
+            "created": 1605195514138,
+            "name": "Users",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1605195514138,
+            "_type": "request_group"
+        },
+        {
+            "_id": "wrk_1995d70316b84a0da27fde2cf7a983be",
+            "parentId": null,
+            "modified": 1605193661446,
+            "created": 1605193661446,
+            "name": "Knex Crud",
+            "description": "",
+            "scope": null,
+            "_type": "workspace"
+        },
+        {
+            "_id": "req_19ccbbfc86c54beeb305d4058470c5a2",
+            "parentId": "fld_4232e3f28513406b803987fc35895f40",
+            "modified": 1605222316306,
+            "created": 1605195577120,
+            "url": "{{ baseUrl }}/users",
+            "name": "create user",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"name\": \"Carlos Kauãn\",\n\t\"surname\": \"Moreira de Sousa\",\n\t\"email\": \"carloskauanmoreiradesousa@gmail.com\",\n\t\"cpf\": \"12345678930\",\n\t\"birthday\": \"2004/11/10\",\n\t\"phone\": \"558599247\",\n\t\"active\": true\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_b14ba94e35e74d1d859a680b992e375d"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1605195577120,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_c6ffe9e541654ee7909376b79f4c4918",
+            "parentId": "fld_4232e3f28513406b803987fc35895f40",
+            "modified": 1605222664561,
+            "created": 1605196041887,
+            "url": "{{ baseUrl }}/users/9",
+            "name": "update user",
+            "description": "",
+            "method": "PUT",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"name\": \"José da Silva\",\n  \"surname\": \"Silva Souza\",\n  \"email\": \"jose@gmail.com\",\n  \"cpf\": \"999999992\",\n  \"birthday\": \"2004/11/10\",\n  \"phone\": \"5585992476020\",\n  \"active\": false\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_610eea7b563c40288cb8b2468536ffa1"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1605195520358,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_15121f4100664601970dd80537c2719b",
+            "parentId": "fld_4232e3f28513406b803987fc35895f40",
+            "modified": 1605222614990,
+            "created": 1605222604214,
+            "url": "{{ baseUrl }}/users/9",
+            "name": "update user frag",
+            "description": "",
+            "method": "PATCH",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"name\": \"José da Silva\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_610eea7b563c40288cb8b2468536ffa1"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1605195520333,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_171f273c40044a2cbcf18ad82acc1bb1",
+            "parentId": "fld_4232e3f28513406b803987fc35895f40",
+            "modified": 1605196359384,
+            "created": 1605196333305,
+            "url": "{{ baseUrl }}/users/2",
+            "name": "delete user",
+            "description": "",
+            "method": "DELETE",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {},
+            "metaSortKey": -1605195520308,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "env_5774809aaba6212806c779c42a37d040d44e7768",
+            "parentId": "wrk_1995d70316b84a0da27fde2cf7a983be",
+            "modified": 1605193662216,
+            "created": 1605193662216,
+            "name": "Base Environment",
+            "data": {},
+            "dataPropertyOrder": null,
+            "color": null,
+            "isPrivate": false,
+            "metaSortKey": 1605193662216,
+            "_type": "environment"
+        },
+        {
+            "_id": "jar_5774809aaba6212806c779c42a37d040d44e7768",
+            "parentId": "wrk_1995d70316b84a0da27fde2cf7a983be",
+            "modified": 1605193662251,
+            "created": 1605193662251,
+            "name": "Default Jar",
+            "cookies": [],
+            "_type": "cookie_jar"
+        },
+        {
+            "_id": "spc_921ffef8678b4d68bbdb3de5594170c1",
+            "parentId": "wrk_1995d70316b84a0da27fde2cf7a983be",
+            "modified": 1605193661476,
+            "created": 1605193661476,
+            "fileName": "Knex Crud",
+            "contents": "",
+            "contentType": "yaml",
+            "_type": "api_spec"
+        },
+        {
+            "_id": "env_4ec223bd04d749c6b11b8de1c27dbfc1",
+            "parentId": "env_5774809aaba6212806c779c42a37d040d44e7768",
+            "modified": 1605195544445,
+            "created": 1605195528223,
+            "name": "dev",
+            "data": { "baseUrl": "http://localhost:5500" },
+            "dataPropertyOrder": { "&": ["baseUrl"] },
+            "color": "#5330df",
+            "isPrivate": false,
+            "metaSortKey": 1605195528223,
+            "_type": "environment"
+        }
+    ]
+}
