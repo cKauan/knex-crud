@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import * as Yup from 'yup';
 import knex from '../database/connection';
 
 export default {
@@ -18,6 +19,19 @@ export default {
             phone,
             active,
         };
+        const schema = Yup.object().shape({
+            name: Yup.string().required(),
+            surname: Yup.string().required(),
+            email: Yup.string().email().required(),
+            cpf: Yup.string().required().length(11),
+            birthday: Yup.date().required(),
+            phone: Yup.string().required().max(13).min(9),
+            active: Yup.boolean().required(),
+        })
+        await schema.validate(data, {
+            abortEarly: false,
+        });
+
         await knex('users').insert(data);
         return res.status(201).json(data);
     },
