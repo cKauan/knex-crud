@@ -4,8 +4,15 @@ import knex from '../database/connection';
 
 export default {
     async index(req: Request, res: Response) {
-        const users = await knex('users').orderBy('id');
-        return res.status(200).json(users);
+        const { page = 1 } = req.query;
+        const users = await knex('users')
+            .orderBy('id')
+            .limit(10)
+            .offset((Number(page) - 1) * 10);
+        const [{ count }] = await knex('users').count();
+        return res
+            .status(200)
+            .json({ data: users, limit: 10, total: Number(count) });
     },
 
     async create(req: Request, res: Response) {
@@ -27,7 +34,7 @@ export default {
             birthday: Yup.date().required(),
             phone: Yup.string().required().max(13).min(9),
             active: Yup.boolean().required(),
-        })
+        });
         await schema.validate(data, {
             abortEarly: false,
         });
@@ -36,6 +43,13 @@ export default {
         return res.status(201).json(data);
     },
     async update(req: Request, res: Response) {
+        const { id } = req.params;
+        const data = req.body;
+        await knex('users').update(data).where({ id });
+        const updatedUser = await knex('users').where({ id });
+        return res.status(200).json(...updatedUser);
+    },
+    async updateFragment(req: Request, res: Response) {
         const { id } = req.params;
         const data = req.body;
         await knex('users').update(data).where({ id });
