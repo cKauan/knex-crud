@@ -44,7 +44,29 @@ export default {
     },
     async update(req: Request, res: Response) {
         const { id } = req.params;
-        const data = req.body;
+        const { name, surname, email, cpf, birthday, phone, active } = req.body;
+        const data = {
+            name,
+            surname,
+            email,
+            cpf,
+            birthday,
+            phone,
+            active,
+        };
+
+        const schema = Yup.object().shape({
+            name: Yup.string(),
+            surname: Yup.string(),
+            email: Yup.string().email(),
+            cpf: Yup.string().length(11),
+            birthday: Yup.date(),
+            phone: Yup.string().max(13).min(9),
+            active: Yup.boolean(),
+        });
+        await schema.validate(data, {
+            abortEarly: false,
+        });
         await knex('users').update(data).where({ id });
         const updatedUser = await knex('users').where({ id });
         return res.status(200).json(...updatedUser);
