@@ -1,5 +1,4 @@
 <!-- PROJECT LOGO -->
-<br />
 <p align="center">
   <h3 align="center">Postgres CRUD</h3>
   <p align="center">CRUD com knex.js</p>
